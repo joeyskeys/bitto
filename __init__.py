@@ -1,15 +1,14 @@
-
-
 import os
+import config
 
 bl_info = {
-    "name": "bitto",
-    "author": "Joey Chen",
-    "version": (1, 0, 1),
-    "blender": (3, 0, 0),
-    "location": "",
-    "description": "Renderer Addon Template",
-    "warning": "",
+    "name": config.name,
+    "author": config.author,
+    "version": config.version,
+    "blender": config.blender_version,
+    "location": config.location,
+    "description": config.description,
+    "warning": config.warning,
     "category": "Render"
 }
 
@@ -22,11 +21,17 @@ else:
 
 def register():
     print('registering the xxx renderer')
-    pass
+    from utils.registry import regular_registry, shading_node_registry
+
+    regular_registry.register()
+    shading_node_registry.register()
 
 
 def unregister():
-    pass
+    from utils.registry import regular_registry, shading_node_registry
+
+    regular_registry.unregister()
+    shading_node_registry.unregister()
 
 
 if __name__ == '__main__':
