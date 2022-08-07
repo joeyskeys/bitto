@@ -9,11 +9,12 @@ warning = ""
 
 engine_name = "EXAMPLE_RENDER"
 
-camera_props = (
+film_props = (
     {
         'type' : 'float',
+        'name' : 'example',
+        'text' : 'Example',
         'props' : {
-            'name' : 'example',
             'description' : 'this is a example property',
             'default' : 0,
             'min' : 0,
@@ -22,11 +23,16 @@ camera_props = (
     },
     {
         'type' : 'string',
+        'name' : 'string_prop',
+        'text' : 'BlaBla',
         'props' : {
-            'name' : 'string_prop',
             'description' : 'this is a example float property',
             'default' : '',
             'subtype' : 'FILE_PATH'
         }
     }
+)
+
+camera_props = (
+    
 )

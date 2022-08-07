@@ -2,11 +2,12 @@
 
 import bpy
 import ..config
+from .base import BittoProperties, setup_ui
 
 
-class BittoFilmProperties(bpy.types.PropertyGroup):
+class BittoFilmProperties(BittoProperties):
     def __init__(self):
-        pass
+        super(BittoFilmProperties, self).__init__(config.film_props)
 
 
 class Bitto_PT_film(bpy.types.Panel):
@@ -26,6 +27,11 @@ class Bitto_PT_film(bpy.types.Panel):
         layout.use_property_split = True
 
         render = context.scene.render
+        layout.row().prop(render, "resolution_x", text="Resolution X")
+        layout.row().prop(render, "resolution_y", text="Resolution Y")
+
+        film_props = context.scene.bitto_film_props
+        setup_ui(layout, config.film_props, film_props)
 
 
 def register():
