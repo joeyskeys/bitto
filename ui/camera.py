@@ -1,5 +1,7 @@
 
 import bpy
+from .. import config
+from .base import BittoProperties, setup_ui
 
 
 class BittoCameraProperties(BittoProperties):
@@ -17,7 +19,7 @@ class Bitto_PT_camera(bpy.types.Panel):
     @classmethod
     def poll(cls, context):
         renderer = context.scene.render
-        return renderer.engine == 'PBRT_RENDER' and context.active_object.type == 'CAMERA'
+        return renderer.engine == config.engine_name and context.active_object.type == 'CAMERA'
 
     def draw(self, context):
         layout = self.layout
@@ -30,7 +32,7 @@ class Bitto_PT_camera(bpy.types.Panel):
 def register():
     # Register property group
     bpy.utils.register_class(BittoCameraProperties)
-    bpy.types.Scene.bitto_film_props = bpy.props.PointerProperty(type=BittoCameraProperties)
+    bpy.types.Scene.bitto_camera_props = bpy.props.PointerProperty(type=BittoCameraProperties)
 
     # Register UIs
     bpy.utils.register_class(Bitto_PT_camera)

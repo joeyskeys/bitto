@@ -1,13 +1,17 @@
 
 
 import bpy
-import ..config
-from .base import BittoProperties, setup_ui
+from .. import config
+from .base import BittoProperties, setup_ui, static_init
 
 
 class BittoFilmProperties(BittoProperties):
-    def __init__(self):
-        super(BittoFilmProperties, self).__init__(config.film_props)
+    pass
+
+
+print('static init film props')
+BittoFilmProperties.static_init(config.film_props)
+print(dir(BittoFilmProperties))
 
 
 class Bitto_PT_film(bpy.types.Panel):

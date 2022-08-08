@@ -1,14 +1,17 @@
 import os
-import config
+from . import config
 
+
+# Sadly bl_info related fields cannot be put into config or it will coz an 
+# ast parse traceback
 bl_info = {
-    "name": config.name,
-    "author": config.author,
-    "version": config.version,
-    "blender": config.blender_version,
-    "location": config.location,
-    "description": config.description,
-    "warning": config.warning,
+    "name": "bitto",
+    "author": "Joey Chen",
+    "version": (0, 0, 1),
+    "blender": (3, 2, 0),
+    "location": "",
+    "description": "Blender Addon Template for Renderers",
+    "warning": "",
     "category": "Render"
 }
 
@@ -20,18 +23,26 @@ else:
 
 
 def register():
-    print('registering the xxx renderer')
-    from utils.registry import regular_registry, shading_node_registry
+    print('registering the {} renderer'.format(config.engine_name))
+    from .utils.registry import regular_registry, shading_node_registry
+    from . import render
+    from . import ui
 
     regular_registry.register()
     shading_node_registry.register()
+    render.register()
+    ui.register()
 
 
 def unregister():
-    from utils.registry import regular_registry, shading_node_registry
+    from .utils.registry import regular_registry, shading_node_registry
+    from . import render
+    from . import ui
 
     regular_registry.unregister()
     shading_node_registry.unregister()
+    render.unregister()
+    ui.unregister()
 
 
 if __name__ == '__main__':
