@@ -29,3 +29,5 @@ film_props = (
 camera_props = (
     
 )
+
+integrator_props = ()

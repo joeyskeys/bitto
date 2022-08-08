@@ -3,6 +3,7 @@
 import bpy
 from .. import config
 from .base import BittoProperties, setup_ui
+from ..utils.registry import regular_registry, property_group_registry
 
 
 class BittoFilmProperties(BittoProperties):
@@ -35,6 +36,7 @@ class Bitto_PT_film(bpy.types.Panel):
         setup_ui(layout, config.film_props, film_props)
 
 
+'''
 def register():
     # Register property group
     bpy.utils.register_class(BittoFilmProperties)
@@ -51,3 +53,7 @@ def unregister():
 
     # Unregister UIs
     bpy.utils.unregister_class(Bitto_PT_film)
+'''
+
+regular_registry.add_new_class(Bitto_PT_film)
+property_group_registry.add_new_property_class(BittoFilmProperties, "bitto_film_props")

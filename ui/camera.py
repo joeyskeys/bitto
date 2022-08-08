@@ -2,11 +2,13 @@
 import bpy
 from .. import config
 from .base import BittoProperties, setup_ui
+from ..utils.registry import regular_registry, property_group_registry
 
 
 class BittoCameraProperties(BittoProperties):
-    def __init__(self):
-        super(BittoCameraProperties, self).__init__(config.camera_props)
+    pass
+
+BittoCameraProperties.init_annotations(config.camera_props)
 
 
 class Bitto_PT_camera(bpy.types.Panel):
@@ -29,6 +31,7 @@ class Bitto_PT_camera(bpy.types.Panel):
         setup_ui(layout, config.camera_props, camera_props)
 
 
+'''
 def register():
     # Register property group
     bpy.utils.register_class(BittoCameraProperties)
@@ -45,3 +48,7 @@ def unregister():
 
     # Unregister UIs
     bpy.utils.unregister_class(Bitto_PT_camera)
+'''
+
+regular_registry.add_new_class(Bitto_PT_camera)
+property_group_registry.add_new_property_class(BittoCameraProperties, "bitto_camera_props")

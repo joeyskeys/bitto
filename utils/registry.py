@@ -39,8 +39,19 @@ class ShadingNodeRegistry(Registry):
             cls.category = 'Default'
 
 
+class PropertyGroupRegistry(Registry):
+    def __init__(self):
+        super(PropertyGroupRegistry, self).__init__()
+        self.property_groups = {}
+
+    def add_new_property_class(self, cls, prop_name):
+        self.add_new_class(cls)
+        self.property_groups[prop_name] = cls
+
+
 regular_registry = Registry()
 shading_node_registry = ShadingNodeRegistry()
+property_group_registry = PropertyGroupRegistry()
 
 
 class Material(object):
