@@ -2,20 +2,12 @@ import bpy
 from ..utils.typemap import bprop_map
 
 
-def static_init(cls, prop_dict):
-    if getattr(cls, 'static_init', None) and not getattr(cls, prop_dict[0]['name'], None):
-        cls.static_init(prop_dict)
-    return cls
-
-
 class BittoProperties(bpy.types.PropertyGroup):
     @classmethod
-    def static_init(cls, prop_dict):
-        print('static init for ', cls.__name__)
+    def init_annotations(cls, prop_dict):
+        print('init annotation for ', cls.__name__)
         for attr in prop_dict:
-            bprop = bprop_map[attr['type']](**attr['props'])
-            print('setting {} to {}'.format(bprop, attr['name']))
-            setattr(cls, attr['name'], bprop)
+            cls.__annotations__[attr['name']] = bprop_map[attr['type']](**attr['props'])
 
 
 def setup_ui(layout, prop_dict, prop):
