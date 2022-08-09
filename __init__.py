@@ -24,25 +24,27 @@ else:
 
 def register():
     print('registering the {} renderer'.format(config.engine_name))
-    from .utils.registry import regular_registry, shading_node_registry
-    from . import render
-    from . import ui
+    from .utils.registry import regular_registry, shading_node_registry, property_group_registry
+    #from . import render
+    #from . import ui
 
+    property_group_registry.register()
     regular_registry.register()
     shading_node_registry.register()
-    render.register()
-    ui.register()
+    #render.register()
+    #ui.register()
 
 
 def unregister():
-    from .utils.registry import regular_registry, shading_node_registry
-    from . import render
-    from . import ui
+    from .utils.registry import regular_registry, shading_node_registry, property_group_registry
+    #from . import render
+    #from . import ui
 
+    property_group_registry.unregister()
     regular_registry.unregister()
     shading_node_registry.unregister()
-    render.unregister()
-    ui.unregister()
+    #render.unregister()
+    #ui.unregister()
 
 
 if __name__ == '__main__':

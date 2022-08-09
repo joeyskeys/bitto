@@ -31,3 +31,9 @@ camera_props = (
 )
 
 integrator_props = ()
+
+light_props = ()
+
+world_props = ()
+
+preference_props = ()

@@ -10,6 +10,11 @@ class BittoProperties(bpy.types.PropertyGroup):
             cls.__annotations__[attr['name']] = bprop_map[attr['type']](**attr['props'])
 
 
+def init_annotations(cls, prop_dict):
+    for attr in prop_dict:
+        cls.__annotations__[attr['name']] = bprop_map[attr['type']](**attr['props'])
+
+
 def setup_ui(layout, prop_dict, prop):
     for attr in prop_dict:
         layout.row().prop(prop, attr['name'], text=attr['text'])
