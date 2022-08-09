@@ -55,5 +55,6 @@ def unregister():
     bpy.utils.unregister_class(Bitto_PT_film)
 '''
 
-regular_registry.add_new_class(Bitto_PT_film)
-property_group_registry.add_new_property_class(BittoFilmProperties, "bitto_film_props")
+def setup():
+    regular_registry.add_new_class(Bitto_PT_film)
+    property_group_registry.add_new_property_class(BittoFilmProperties, bpy.types.Scene, "bitto_film_props")

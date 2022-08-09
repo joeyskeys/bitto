@@ -1,12 +1,19 @@
 from . import film
 from . import camera
+from . import integrator
+from . import light
+from . import material
+from . import preferences
+from . import sampler
+from . import world
 
 
-def register():
-    film.register()
-    camera.register()
-
-
-def unregister():
-    film.unregister()
-    camera.unregister()
+def setup():
+    film.setup()
+    camera.setup()
+    integrator.setup()
+    light.setup()
+    material.setup()
+    preferences.setup()
+    sampler.setup()
+    world.setup()

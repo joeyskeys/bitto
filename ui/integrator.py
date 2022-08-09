@@ -1,5 +1,6 @@
 
 import bpy
+from .. import config
 from .base import BittoProperties, setup_ui
 from ..utils.registry import regular_registry, property_group_registry
 
@@ -27,5 +28,6 @@ class Bitto_PT_integrator(bpy.types.Panel):
         layout.use_property_split = True
 
 
-regular_registry.add_new_class(Bitto_PT_integrator)
-property_group_registry.add_new_property_class(BittoIntegratorProperties, "bitto_integrator_props")
+def setup():
+    regular_registry.add_new_class(Bitto_PT_integrator)
+    property_group_registry.add_new_property_class(BittoIntegratorProperties, bpy.types.Scene, "bitto_integrator_props")

@@ -1,6 +1,6 @@
 
-from pydoc import render_doc
 import bpy
+from .. import config
 from .base import BittoProperties, setup_ui
 from ..utils.registry import regular_registry, property_group_registry
 
@@ -21,7 +21,7 @@ class Bitto_PT_light(bpy.types.Panel):
     @classmethod
     def poll(cls, context):
         renderer = context.scene.render
-        return render.engine == config.engine_name and context.active_object.type == 'LIGHT'
+        return renderer.engine == config.engine_name and context.active_object.type == 'LIGHT'
 
     def draw(self, context):
         layout = self.layout
@@ -30,5 +30,6 @@ class Bitto_PT_light(bpy.types.Panel):
         light = context.active_object.data
 
 
-regular_registry.add_new_class(Bitto_PT_light)
-property_group_registry.add_new_property_class(BittoLightProperty, "bitto_light_props")
+def setup():
+    regular_registry.add_new_class(Bitto_PT_light)
+    property_group_registry.add_new_property_class(BittoLightProperty, bpy.types.Light, "bitto_light_props")

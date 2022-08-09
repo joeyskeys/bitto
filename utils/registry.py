@@ -6,11 +6,13 @@ class Registry(object):
         self.cls_to_register = []
 
     def add_new_class(self, cls):
+        print('adding {} to list'.format(cls.__name__))
         self.cls_to_register.append(cls)
 
     def register(self):
+        print('{} classes to register'.format(len(self.cls_to_register)))
         for c in self.cls_to_register:
-            print('register', c)
+            print('register', c.__name__)
             bpy.utils.register_class(c)
 
     def unregister(self):
@@ -44,9 +46,14 @@ class PropertyGroupRegistry(Registry):
         super(PropertyGroupRegistry, self).__init__()
         self.property_groups = {}
 
-    def add_new_property_class(self, cls, prop_name):
+    def add_new_property_class(self, cls, host, prop_name):
         self.add_new_class(cls)
-        self.property_groups[prop_name] = cls
+        self.property_groups[prop_name] = (cls, host)
+
+    def register(self):
+        super().register()
+        for prop_name, (cls, host) in self.property_groups.items():
+            setattr(host, prop_name, bpy.props.PointerProperty(type=cls)) 
 
 
 regular_registry = Registry()

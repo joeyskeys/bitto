@@ -23,4 +23,5 @@ class Bitto_PT_materialslots(bpy.types.Panel):
         space = context.space_data
 
 
-regular_registry.add_new_class(Bitto_PT_materialslots)
+def setup():
+    regular_registry.add_new_class(Bitto_PT_materialslots)

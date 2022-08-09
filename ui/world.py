@@ -29,3 +29,8 @@ class Bitto_PT_world(bpy.types.Panel):
 
         world_props = context.scene.bitto_world_props
         setup_ui(layout, config.world_props, world_props)
+
+
+def setup():
+    regular_registry.add_new_class(Bitto_PT_world)
+    property_group_registry.add_new_property_class(BittoWorldProperties, bpy.types.Scene, "bitto_world_props")

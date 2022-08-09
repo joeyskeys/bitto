@@ -1,4 +1,1 @@
-from .engine import register, unregister
-
-
-__all__ = ['register', 'unregister']
+from .engine import setup

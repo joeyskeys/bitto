@@ -50,5 +50,6 @@ def unregister():
     bpy.utils.unregister_class(Bitto_PT_camera)
 '''
 
-regular_registry.add_new_class(Bitto_PT_camera)
-property_group_registry.add_new_property_class(BittoCameraProperties, "bitto_camera_props")
+def setup():
+    regular_registry.add_new_class(Bitto_PT_camera)
+    property_group_registry.add_new_property_class(BittoCameraProperties, bpy.types.Camera, "bitto_camera_props")

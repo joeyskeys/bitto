@@ -16,11 +16,12 @@ class BittoPreferences(bpy.types.AddonPreferences):
         layout = self.layout
         setup_ui(layout, config.preference_props, self)
 
-init_annotations(BittoPreferences, config.preferences_props)
+init_annotations(BittoPreferences, config.preference_props)
 
 
 def get_pref():
     return bpy.context.preferences.addons[addon_name].preferences
 
 
-regular_registry.add_new_class(BittoPreferences)
+def setup():
+    regular_registry.add_new_class(BittoPreferences)

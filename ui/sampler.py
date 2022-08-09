@@ -31,5 +31,6 @@ class Bitto_PT_sampler(bpy.types.Panel):
         setup_ui(layout, config.sampler_props, sampler_props)
 
 
-regular_registry.add_new_class(Bitto_PT_sampler)
-property_group_registry.add_new_property_class(BittoSamplerProperties, "bitto_sampler_props")
+def setup():
+    regular_registry.add_new_class(Bitto_PT_sampler)
+    property_group_registry.add_new_property_class(BittoSamplerProperties, bpy.types.Scene, "bitto_sampler_props")

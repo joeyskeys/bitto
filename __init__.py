@@ -25,8 +25,10 @@ else:
 def register():
     print('registering the {} renderer'.format(config.engine_name))
     from .utils.registry import regular_registry, shading_node_registry, property_group_registry
-    #from . import render
-    #from . import ui
+    from . import render
+    from . import ui
+    ui.setup()
+    render.setup()
 
     property_group_registry.register()
     regular_registry.register()

@@ -34,6 +34,8 @@ integrator_props = ()
 
 light_props = ()
 
+sampler_props = ()
+
 world_props = ()
 
 preference_props = ()

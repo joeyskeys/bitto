@@ -3,6 +3,7 @@ import os
 import bpy
 import time
 from .. import config
+from ..utils.registry import regular_registry
 
 
 class BittoRenderEngine(bpy.types.RenderEngine):
@@ -29,9 +30,5 @@ class BittoRenderEngine(bpy.types.RenderEngine):
         pass
 
 
-def register():
-    bpy.utils.register_class(BittoRenderEngine)
-
-
-def unregister():
-    bpy.utils.unregister_class(BittoRenderEngine)
+def setup():
+    regular_registry.add_new_class(BittoRenderEngine)
