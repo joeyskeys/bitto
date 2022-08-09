@@ -1,9 +1,10 @@
 
 import bpy
 import mathutils
+from .base import BaseIO
 
 
-class FilmIO(object):
+class FilmIO(BaseIO):
     """
     """
 
@@ -16,3 +17,12 @@ class FilmIO(object):
 
     def get_props(self):
         return bpy.context.scene.bitto_film_props
+
+    def write_description(self, writer):
+        pass
+
+    def read_description(self, reader):
+        pass
+
+    def feed_api(self):
+        pass

@@ -1,8 +1,9 @@
 
 import bpy
+from .base import BaseIO
 
 
-class LightIO(object):
+class LightIO(BaseIO):
     """
     """
 

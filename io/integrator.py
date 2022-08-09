@@ -1,9 +1,10 @@
 
 import bpy
 import mathutils
+from .base import BaseIO
 
 
-class IntegratorIO(object):
+class IntegratorIO(BaseIO):
     """
     """
 

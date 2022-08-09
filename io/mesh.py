@@ -1,8 +1,9 @@
 
 import bpy
+from .base import BaseIO
 
 
-class MeshIO(object):
+class MeshIO(BaseIO):
     """
     """
 

@@ -1,8 +1,9 @@
 
 import bpy
+from .base import BaseIO
 
 
-class SamplerIO(object):
+class SamplerIO(BaseIO):
     def __init__(self):
         pass
 

@@ -1,11 +1,11 @@
 
 import bpy
 import mathutils
-
 import math
+from .base import BaseIO
 
 
-class CameraIO(object):
+class CameraIO(BaseIO):
     """
 
     """
@@ -30,4 +30,7 @@ class CameraIO(object):
         pass
 
     def read_description(self):
+        pass
+
+    def feed_api(self):
         pass
