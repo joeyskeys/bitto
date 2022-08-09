@@ -24,5 +24,10 @@ class CameraIO(object):
         return eye_pos, look_vec, up_vec
 
     def get_props(self):
-        camera_props = bpy.context.scene.bitto_camera_props
-        return camera_props
+        return bpy.context.scene.bitto_camera_props
+
+    def write_description(self):
+        pass
+
+    def read_description(self):
+        pass
