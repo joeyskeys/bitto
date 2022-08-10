@@ -36,25 +36,6 @@ class Bitto_PT_film(bpy.types.Panel):
         setup_ui(layout, config.film_props, film_props)
 
 
-'''
-def register():
-    # Register property group
-    bpy.utils.register_class(BittoFilmProperties)
-    bpy.types.Scene.bitto_film_props = bpy.props.PointerProperty(type=BittoFilmProperties)
-
-    # Register UIs
-    bpy.utils.register_class(Bitto_PT_film)
-
-
-def unregister():
-    # Unregister property group
-    del bpy.types.Scene.bitto_film_props
-    bpy.utils.unregister_class(BittoFilmProperties)
-
-    # Unregister UIs
-    bpy.utils.unregister_class(Bitto_PT_film)
-'''
-
 def setup():
     regular_registry.add_new_class(Bitto_PT_film)
     property_group_registry.add_new_property_class(BittoFilmProperties, bpy.types.Scene, "bitto_film_props")

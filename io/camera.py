@@ -29,8 +29,5 @@ class CameraIO(BaseIO):
     def write_description(self):
         pass
 
-    def read_description(self):
-        pass
-
     def feed_api(self):
         pass

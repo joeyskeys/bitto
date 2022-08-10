@@ -21,8 +21,5 @@ class FilmIO(BaseIO):
     def write_description(self, writer):
         pass
 
-    def read_description(self, reader):
-        pass
-
     def feed_api(self):
         pass

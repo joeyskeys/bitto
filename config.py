@@ -37,3 +37,8 @@ sampler_props = ()
 world_props = ()
 
 preference_props = ()
+
+node_categories = (
+    ('BITTO_MATERIAL', 'Material'),
+    ('BITTO_TEXTURE', 'Texture'),
+)
