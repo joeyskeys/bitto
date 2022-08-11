@@ -13,7 +13,7 @@ class AcceleratorIO(BaseIO):
     def get_props(self):
         return bpy.context.scene.bitto_accelerator_props
 
-    def write_description(self, writer):
+    def write_description(self, handle):
         pass
 
     def feed_api(self):
