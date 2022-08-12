@@ -23,6 +23,9 @@ class CameraIO(BaseIO):
         up_vec.rotate(camera_matrix.to_3x3())
         return eye_pos, look_vec, up_vec
 
+    def get_fov(self):
+        return bpy.context.scene.camera.data.angle
+
     def get_props(self):
         return bpy.context.scene.bitto_camera_props
 
