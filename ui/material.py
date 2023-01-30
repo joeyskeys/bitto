@@ -1,5 +1,6 @@
 
 import bpy
+from .. import config
 from .base import BittoProperties, setup_ui
 from ..utils.registry import regular_registry, property_group_registry
 

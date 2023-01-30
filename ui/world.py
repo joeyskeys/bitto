@@ -21,9 +21,9 @@ class Bitto_PT_world(bpy.types.Panel):
     @classmethod
     def poll(cls, context):
         renderer = context.scene.render
-        return render.engine == config.engine_name
+        return renderer.engine == config.engine_name
 
-    def draw(cls, context):
+    def draw(self, context):
         layout = self.layout
         layout.use_property_split = True
 
