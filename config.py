@@ -1,6 +1,6 @@
 
 engine_name = "EXAMPLE_RENDER"
-engine_label = "Example"
+engine_label = "Bitto_Example"
 
 film_props = (
     {

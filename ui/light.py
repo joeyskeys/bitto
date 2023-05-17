@@ -11,7 +11,7 @@ class BittoLightProperty(BittoProperties):
 BittoLightProperty.init_annotations(config.light_props)
 
 
-class Bitto_PT_light(bpy.types.Panel):
+class BITTO_PT_light(bpy.types.Panel):
     bl_label = "Light"
     bl_space_type = "PROPERTIES"
     bl_region_type = "WINDOW"
@@ -31,5 +31,5 @@ class Bitto_PT_light(bpy.types.Panel):
 
 
 def setup():
-    regular_registry.add_new_class(Bitto_PT_light)
+    regular_registry.add_new_class(BITTO_PT_light)
     property_group_registry.add_new_property_class(BittoLightProperty, bpy.types.Light, "bitto_light_props")

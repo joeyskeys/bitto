@@ -11,7 +11,7 @@ class BittoIntegratorProperties(BittoProperties):
 BittoIntegratorProperties.init_annotations(config.integrator_props)
 
 
-class Bitto_PT_integrator(bpy.types.Panel):
+class BITTO_PT_integrator(bpy.types.Panel):
     bl_label = "Integrator"
     bl_space_type = "PROPERTIES"
     bl_region_type = "WINDOW"
@@ -29,5 +29,5 @@ class Bitto_PT_integrator(bpy.types.Panel):
 
 
 def setup():
-    regular_registry.add_new_class(Bitto_PT_integrator)
+    regular_registry.add_new_class(BITTO_PT_integrator)
     property_group_registry.add_new_property_class(BittoIntegratorProperties, bpy.types.Scene, "bitto_integrator_props")

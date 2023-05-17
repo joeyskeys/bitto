@@ -5,7 +5,7 @@ from .base import BittoProperties, setup_ui
 from ..utils.registry import regular_registry, property_group_registry
 
 
-class Bitto_PT_materialslots(bpy.types.Panel):
+class BITTO_PT_materialslots(bpy.types.Panel):
     bl_label = "Material"
     bl_space_type = "PROPERTIES"
     bl_region_type = "WINDOW"
@@ -25,4 +25,4 @@ class Bitto_PT_materialslots(bpy.types.Panel):
 
 
 def setup():
-    regular_registry.add_new_class(Bitto_PT_materialslots)
+    regular_registry.add_new_class(BITTO_PT_materialslots)

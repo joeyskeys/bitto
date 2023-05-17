@@ -11,7 +11,7 @@ class BittoAcceleratorProperties(BittoProperties):
 BittoAcceleratorProperties.init_annotations(config.accelerator_props)
 
 
-class Bitto_PT_accelerator(bpy.types.Panel):
+class BITTO_PT_accelerator(bpy.types.Panel):
     bl_label = "Accelerator"
     bl_space_type = "PROPERTIES"
     bl_region_type = "WINDOW"
@@ -31,5 +31,5 @@ class Bitto_PT_accelerator(bpy.types.Panel):
 
 
 def setup():
-    regular_registry.add_new_class(Bitto_PT_accelerator)
+    regular_registry.add_new_class(BITTO_PT_accelerator)
     property_group_registry.add_new_property_class(BittoAcceleratorProperties, bpy.types.Scene, "bitto_accelerator_props")

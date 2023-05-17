@@ -11,7 +11,7 @@ class BittoWorldProperties(BittoProperties):
 BittoWorldProperties.init_annotations(config.world_props)
 
 
-class Bitto_PT_world(bpy.types.Panel):
+class BITTO_PT_world(bpy.types.Panel):
     bl_label = "World"
     bl_space_type = "PROPERTIES"
     bl_region_type = "WINDOW"
@@ -32,5 +32,5 @@ class Bitto_PT_world(bpy.types.Panel):
 
 
 def setup():
-    regular_registry.add_new_class(Bitto_PT_world)
+    regular_registry.add_new_class(BITTO_PT_world)
     property_group_registry.add_new_property_class(BittoWorldProperties, bpy.types.Scene, "bitto_world_props")

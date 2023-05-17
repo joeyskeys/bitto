@@ -11,7 +11,7 @@ class BittoCameraProperties(BittoProperties):
 BittoCameraProperties.init_annotations(config.camera_props)
 
 
-class Bitto_PT_camera(bpy.types.Panel):
+class BITTO_PT_camera(bpy.types.Panel):
     bl_label = "Camera"
     bl_space_type = "PROPERTIES"
     bl_region_type = "WINDOW"
@@ -31,25 +31,6 @@ class Bitto_PT_camera(bpy.types.Panel):
         setup_ui(layout, config.camera_props, camera_props)
 
 
-'''
-def register():
-    # Register property group
-    bpy.utils.register_class(BittoCameraProperties)
-    bpy.types.Scene.bitto_camera_props = bpy.props.PointerProperty(type=BittoCameraProperties)
-
-    # Register UIs
-    bpy.utils.register_class(Bitto_PT_camera)
-
-
-def unregister():
-    # Unregister property group
-    del bpy.types.Scene.bitto_camera_props
-    bpy.utils.unregister_class(BittoCameraProperties)
-
-    # Unregister UIs
-    bpy.utils.unregister_class(Bitto_PT_camera)
-'''
-
 def setup():
-    regular_registry.add_new_class(Bitto_PT_camera)
+    regular_registry.add_new_class(BITTO_PT_camera)
     property_group_registry.add_new_property_class(BittoCameraProperties, bpy.types.Camera, "bitto_camera_props")

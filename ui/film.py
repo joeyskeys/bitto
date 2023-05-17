@@ -12,7 +12,7 @@ class BittoFilmProperties(BittoProperties):
 BittoFilmProperties.init_annotations(config.film_props)
 
 
-class Bitto_PT_film(bpy.types.Panel):
+class BITTO_PT_film(bpy.types.Panel):
     bl_label = "Film"
     bl_space_type = "PROPERTIES"
     bl_region_type = "WINDOW"
@@ -37,5 +37,5 @@ class Bitto_PT_film(bpy.types.Panel):
 
 
 def setup():
-    regular_registry.add_new_class(Bitto_PT_film)
+    regular_registry.add_new_class(BITTO_PT_film)
     property_group_registry.add_new_property_class(BittoFilmProperties, bpy.types.Scene, "bitto_film_props")

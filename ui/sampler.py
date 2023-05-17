@@ -11,7 +11,7 @@ class BittoSamplerProperties(BittoProperties):
 BittoSamplerProperties.init_annotations(config.sampler_props)
 
 
-class Bitto_PT_sampler(bpy.types.Panel):
+class BITTO_PT_sampler(bpy.types.Panel):
     bl_label = "Sampler"
     bl_space_type = "PROPERTIES"
     bl_region_type = "WINDOW"
@@ -32,5 +32,5 @@ class Bitto_PT_sampler(bpy.types.Panel):
 
 
 def setup():
-    regular_registry.add_new_class(Bitto_PT_sampler)
+    regular_registry.add_new_class(BITTO_PT_sampler)
     property_group_registry.add_new_property_class(BittoSamplerProperties, bpy.types.Scene, "bitto_sampler_props")
