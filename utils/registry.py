@@ -1,4 +1,5 @@
 import bpy
+from .. import config
 
 
 class Registry(object):

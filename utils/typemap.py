@@ -8,3 +8,13 @@ bprop_map = {
     'string' : bpy.props.StringProperty,
     'fvec' : bpy.props.FloatVectorProperty,
 }
+
+bsocket_map = {
+    'float' : 'NodeSocketFloat',
+    'int' : 'NodeSocketInt',
+    'color' : 'NodeSocketColor',
+    'vector' : 'NodeSocketVector',
+    'normal' : 'NodeSocketVector',
+    'point' : 'NodeSocketVector',
+    'bool' : 'NodeSocketBool',
+}

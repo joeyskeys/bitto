@@ -43,11 +43,12 @@ def hide_func(cls, context):
 
 def register():
     global original_poll_func
+    original_poll_func = ShaderNodeCategory.poll
+    ShaderNodeCategory.poll = hide_func
+
     for category, label in config.node_categories.items():
         bitto_shader_node_categories.append(BittoNodeCategory(category, label, items=
             [NodeItem(node_info[0], node_info[1]) for node_info in shading_node_registry.node_categories[label]]))
-    original_poll_func = ShaderNodeCategory.poll
-    ShaderNodeCategory.poll = hide_func
     nodeitems_utils.register_node_categories("BITTO_SHADER_NODES", bitto_shader_node_categories)
 
 

@@ -36,7 +36,17 @@ sampler_props = ()
 
 world_props = ()
 
-preference_props = ()
+preference_props = (
+    {
+        'type' : 'int',
+        'name' : 'test_prop',
+        'text' : 'BlaBla',
+        'props' : {
+            'description' : 'this is a int property',
+            'default' : 5,
+        },
+    },
+)
 
 node_categories = (
     ('BITTO_MATERIAL', 'Material'),
