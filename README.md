@@ -14,7 +14,7 @@ I've created a blender render engine addon for PBRT-v3, named [btop](https://git
 
 This experience gave me the fundamental knowledge of developing a blender render engine addon. When it comes to the time I need to write a addon for my own [renderer](https://github.com/joeyskeys/kazen_proto), which is still in the early stage of development, I found it's total duplicated work since the data you need to get out from blender is the same and the GUI you need to setup in blender shares the similar pattern.
 
-So I decided to write this template as a summarize for the development of such kind blender addon and so hope it can help other to do the same kind of work easily.
+So I decided to write this template as a summarize for the development of such kind blender addon and hope it can help others to do the same kind of work easily.
 
 ## How
 
