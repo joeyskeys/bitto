@@ -18,7 +18,7 @@ So I decided to write this template as a summarize for the development of such k
 
 ## How
 
-A render engine addon main contains four parts.
+A render engine addon mainly contains four parts.
 
 ### Scene Data Output
 
@@ -30,7 +30,7 @@ The naming of files is straight forward and you have to write your own code for 
 
 write_description is the interface to write out the scene description that your renderer can consume. Note the only parameter for this interface defined here is handler, a file IO handler for you to write out the data.
 
-feed_api is the interface that is used to feed the data directly into your renderer APIs, python binding to your renderer's c++ data IO interfaces.
+feed_api is the interface that is used to feed the data directly into your renderer APIs, which will be python bindings to your renderer's c++ data IO interfaces.
 
 Besides these two methods, there're some data fetching methods for you to get data from blender:
 
@@ -44,7 +44,7 @@ props = camera_io.get_props()
 your_custom_property_value = props.your_property_name
 ```
 
-type specific interface is some useful utility method for you to get some essential properties from blender to save your time to look into the documentation and to find what you need. Take camera class's get_camera_infos for example, it simply returns the eye position, look to vector and the up vector of the camera.
+type specific interface is some useful utility method for you to get some essential properties from blender, saving your time to look into the documentation and help find the data you need. Take camera class's get_camera_infos for example, it simply returns the eye position, look to vector and the up vector of the camera.
 
 ### GUI for Custom Properties
 
@@ -77,11 +77,11 @@ Bitto provides you the basic interface where you need to fill in your own code a
 
 ## About config.py
 
-TO BE DONE.
+Besides custom property definition, there're some other properties you could customize in config.py, check the file to find out. More comments will be added to further explain the variables in it.
 
 ## Utilities
 
-TO BE DONE.
+Some utilities live in the [utils/](https://github.com/joeyskeys/bitto/tree/main/utils) folder. These codes aren't neccessary part of a render engine but you may find it handy. One good example is the triangulation function provided in [triangulate.py](https://github.com/joeyskeys/bitto/blob/main/utils/triangulate.py). Your renderer may only support triangle meshes but meshes in the scene could possibly contain ngons. Run it as a pre-render pass to validate your scene data and then feed it into your renderer.
 
 ## Example
 
