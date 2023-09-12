@@ -1,5 +1,6 @@
 
 import bpy
+from .base import BaseIO
 from .mesh import MeshIO
 from .material import MaterialIO
 from .light import LightIO

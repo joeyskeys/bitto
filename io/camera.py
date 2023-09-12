@@ -24,10 +24,10 @@ class CameraIO(BaseIO):
         return eye_pos, look_vec, up_vec
 
     def get_fov(self):
-        return bpy.context.scene.data.camera.data.angle
+        return bpy.context.scene.camera.data.angle
 
     def get_props(self):
-        return bpy.context.scene.data.bitto_camera_props
+        return bpy.context.scene.camera.data.bitto_camera_props
 
     def write_description(self):
         pass
